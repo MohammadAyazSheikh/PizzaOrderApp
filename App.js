@@ -30,8 +30,8 @@ import OrderComponent from './source/components/orderComponent';
 const App = () => {
   return (
     <>
-        <OrderComponent/>
-   </>
+      <OrderComponent />
+    </>
   );
 };
 

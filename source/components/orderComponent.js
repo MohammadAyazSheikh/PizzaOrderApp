@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView, Animated } from 'react-native';
 import { Dimensions, PixelRatio } from 'react-native';
-
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 
@@ -17,7 +16,14 @@ export default class OrderComponent extends Component {
     render() {
         return (
             <View style={styles.container}>
-                
+                <View style={styles.headerView}>
+                    <View style={styles.txtHeaderView}>
+                        <Text style = {styles.txtHeader}>Karachi Pizzaaa</Text>
+                    </View>
+                    <View style={styles.cartIconView}>
+                        <Image source={require('../../assets/Buy.png')} style={styles.cartIconStyle} />
+                    </View>
+                </View>
             </View>
         );
     }
@@ -44,10 +50,33 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#f2f2f2',
-        // justifyContent: 'center',
     },
-    
 
+    headerView: {
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    txtHeaderView:{
+        // backgroundColor:'red',
+        flex:4,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    cartIconView:{
+        flex:0.5
+    },
+    txtHeader:{
+        fontSize:widthToDp(6),
+        fontWeight:'bold',
+        marginLeft:widthToDp(6)
+    },
+    cartIconStyle:{
+        width:widthToDp(9),
+        height:widthToDp(9)
+    }
+
+    
 });
 
 
