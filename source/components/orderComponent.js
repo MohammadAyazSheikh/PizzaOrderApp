@@ -21,11 +21,17 @@ export default class OrderComponent extends Component {
 
         this.chilliAnim1 = new Animated.ValueXY({ x: widthToDp(-40), y: heightToDp(-10) })
         this.chilliAnim2 = new Animated.ValueXY({ x: widthToDp(100), y: heightToDp(33) })
-        this.chilliAnim3 = new Animated.ValueXY({ x: widthToDp(-40), y: heightToDp(-10) })
+        this.onionAnim1 = new Animated.ValueXY({ x: widthToDp(-40), y: heightToDp(-10) })
+        this.onionAnim2 = new Animated.ValueXY({ x: widthToDp(100), y: heightToDp(33) })
+        this.oliveAnim1 = new Animated.ValueXY({ x: widthToDp(-40), y: heightToDp(-10) })
+        this.oliveAnim2 = new Animated.ValueXY({ x: widthToDp(100), y: heightToDp(33) })
+        this.shimlaAnim1 = new Animated.ValueXY({ x: widthToDp(-40), y: heightToDp(-10) })
+        this.shimlaAnim2 = new Animated.ValueXY({ x: widthToDp(100), y: heightToDp(33) })
+
 
         this.panArr = []
         this.panResponderArr = []
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
 
             const pan = new Animated.ValueXY();
 
@@ -44,6 +50,18 @@ export default class OrderComponent extends Component {
                     if (i == 3) {
                         Animated.spring(this.chilliAnim1, { toValue: { x: widthToDp(40), y: heightToDp(10) }, useNativeDriver: true }).start();
                         Animated.spring(this.chilliAnim2, { toValue: { x: widthToDp(36), y: heightToDp(23) }, useNativeDriver: true }).start();
+                    }
+                    else if (i == 1) {
+                        Animated.spring(this.onionAnim1, { toValue: { x: widthToDp(29), y: heightToDp(18) }, useNativeDriver: true }).start();
+                        Animated.spring(this.onionAnim2, { toValue: { x: widthToDp(53), y: heightToDp(20) }, useNativeDriver: true }).start();
+                    }
+                    else if (i == 2) {
+                        Animated.spring(this.oliveAnim1, { toValue: { x: widthToDp(44), y: heightToDp(18) }, useNativeDriver: true }).start();
+                        Animated.spring(this.oliveAnim2, { toValue: { x: widthToDp(32), y: heightToDp(14) }, useNativeDriver: true }).start();
+                    }
+                    else if (i == 0) {
+                        Animated.spring(this.shimlaAnim1, { toValue: { x: widthToDp(50), y: heightToDp(15) }, useNativeDriver: true }).start();
+                        Animated.spring(this.shimlaAnim2, { toValue: { x: widthToDp(48), y: heightToDp(25) }, useNativeDriver: true }).start();
                     }
                 }
             });
@@ -84,9 +102,15 @@ export default class OrderComponent extends Component {
                         </View>
                         <Animated.Image source={require('../../assets/chilli.png')} style={[styles.ImageTop, { transform: [{ translateX: this.chilliAnim1.x }, { translateY: this.chilliAnim1.y }] }]} />
                         <Animated.Image source={require('../../assets/chilli.png')} style={[styles.ImageTop, { transform: [{ translateX: this.chilliAnim2.x }, { translateY: this.chilliAnim2.y }] }]} />
-                        
+                        <Animated.Image source={require('../../assets/onion2.png')} style={[styles.ImageTop, { transform: [{ translateX: this.onionAnim1.x }, { translateY: this.onionAnim1.y }] }]} />
+                        <Animated.Image source={require('../../assets/onion2.png')} style={[styles.ImageTop, { transform: [{ translateX: this.onionAnim2.x }, { translateY: this.onionAnim2.y }] }]} />
+                        <Animated.Image source={require('../../assets/olive.png')} style={[styles.ImageTop, { transform: [{ translateX: this.oliveAnim1.x }, { translateY: this.oliveAnim1.y }] }]} />
+                        <Animated.Image source={require('../../assets/olive.png')} style={[styles.ImageTop, { transform: [{ translateX: this.oliveAnim2.x }, { translateY: this.oliveAnim2.y }] }]} />
+                        <Animated.Image source={require('../../assets/shimla2.png')} style={[styles.ImageTop, { transform: [{ translateX: this.shimlaAnim1.x }, { translateY: this.shimlaAnim1.y }] }]} />
+                        <Animated.Image source={require('../../assets/shimla2.png')} style={[styles.ImageTop, { transform: [{ translateX: this.shimlaAnim2.x }, { translateY: this.shimlaAnim2.y }] }]} />
 
-                        {/* <Animated.Image source={require('../../assets/chilli.png')} style={[styles.ImageTop, { transform: [{ translateX: this.chilliAnim1.x }, { translateY: this.chilliAnim1.y }] }]} /> */}
+
+
                         <View style={styles.pizzaDetailView}>
 
                             <Text style={styles.txtPrice}>{this.state.price} $</Text>
@@ -146,7 +170,7 @@ export default class OrderComponent extends Component {
                                         transform: [{ translateX: this.panArr[index].x }, { translateY: this.panArr[index].y }]
                                     },
                                     {
-                                        left: index * 65
+                                        left: index * 85
                                     }
                                     ]}
                                         {...this.panResponderArr[index].panHandlers} key={item.id}
@@ -156,6 +180,18 @@ export default class OrderComponent extends Component {
                                             if (index == 3) {
                                                 Animated.spring(this.chilliAnim1, { toValue: { x: widthToDp(-40), y: heightToDp(-10) }, useNativeDriver: true }).start();
                                                 Animated.spring(this.chilliAnim2, { toValue: { x: widthToDp(100), y: heightToDp(33) }, useNativeDriver: true }).start();
+                                            }
+                                            else if (index == 1) {
+                                                Animated.spring(this.onionAnim1, { toValue: { x: widthToDp(-40), y: heightToDp(10) }, useNativeDriver: true }).start();
+                                                Animated.spring(this.onionAnim2, { toValue: { x: widthToDp(100), y: heightToDp(33) }, useNativeDriver: true }).start();
+                                            }
+                                            else if (index == 2) {
+                                                Animated.spring(this.oliveAnim1, { toValue: { x: widthToDp(-40), y: heightToDp(10) }, useNativeDriver: true }).start();
+                                                Animated.spring(this.oliveAnim2, { toValue: { x: widthToDp(100), y: heightToDp(33) }, useNativeDriver: true }).start();
+                                            }
+                                            else if (index == 0) {
+                                                Animated.spring(this.shimlaAnim1, { toValue: { x: widthToDp(-40), y: heightToDp(10) }, useNativeDriver: true }).start();
+                                                Animated.spring(this.shimlaAnim2, { toValue: { x: widthToDp(100), y: heightToDp(33) }, useNativeDriver: true }).start();
                                             }
                                         }}>
                                             <Image source={item.image} style={styles.toppingImageStyle} />

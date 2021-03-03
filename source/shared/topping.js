@@ -17,10 +17,10 @@ export const topping = [
         id: 3,
         image: require('../../assets/chilli.png')
     },
-    {
-        id: 4,
-        image: require('../../assets/chicken.png')
-    },
+    // {
+    //     id: 4,
+    //     image: require('../../assets/chicken.png')
+    // },
 ]
 
 
